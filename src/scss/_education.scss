@@ -1,0 +1,224 @@
+/*
+SCSS variables and mixins
+*/
+// $color__main: #444;
+
+.education {
+  font-size: 1.2em;
+
+  &__title {
+    @include title_format();
+  }
+
+  &__container {
+    background: #fff;
+    box-shadow: 1px 1px 6px #ccc;
+    width: 80%;
+    padding: 1em;
+    margin: 1em auto;
+
+    .education__nav {
+      display: none;
+
+      ul {
+        margin: 0;
+        padding: 0 0 1em 0;
+        font-weight: bold;
+        li {
+          background: $background__active;
+
+          a {
+            // height: 50px;
+            padding: 0.5em 1em;
+            &:hover,
+            &.active {
+              @include tab-active();
+            }
+          }
+        }
+      }
+    }
+    .education__course {
+      min-height: 2em; // We need a minimum height for each item or else the accordion buttons would dissapear
+      &::before {
+        content: attr(
+          data-title
+        ); // Instead of polluting the HTML with a duplicate set of tabs, we get the accordion using the data-title attribute.
+      }
+      // &::before {
+      //   content: url(data-image);
+      // }
+      .education__info {
+        // We hide the inactive content with zero opacity instead of "display:none" because this allows us to apply transition effects if we want.
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+      }
+      &.active {
+        .education__info {
+          opacity: 1;
+          visibility: visible;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  &__course {
+    margin-bottom: 2px;
+    &::before {
+      cursor: pointer;
+      font-weight: bold;
+      background: $background__active;
+      padding: 0.5em;
+      display: block;
+      text-align: center;
+    }
+    &.active {
+      &::before {
+        @include tab-active();
+        color: black;
+      }
+      .education__info {
+        padding: 1em;
+        -webkit-transition: opacity 0.3s ease-in-out;
+        -moz-transition: opacity 0.3s ease-in-out;
+        -o-transition: opacity 0.3s ease-in-out;
+        -ms-transition: opacity 0.3s ease-in-out;
+        transition: opacity 0.3s ease-in-out;
+      }
+    }
+  }
+
+  &__logo {
+    // width: 150px;
+    height: 20px;
+
+    // &:first-child {
+    //   height: 40px;
+    // }
+
+    // &:first-of-type {
+    //   height: 40px;
+    // }
+
+    &:nth-child(1) {
+      height: 20px;
+    }
+  }
+
+  &__info-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-size: 1.7rem;
+    margin: 0;
+    text-align: center;
+    flex-basis: 85px;
+  }
+
+  &__result {
+    flex-basis: 35px;
+  }
+
+  &__description {
+    margin-top: 0;
+    flex-basis: 70px;
+  }
+
+  &__certificate-img {
+    width: 200px;
+  }
+
+  &__result {
+    margin: 0;
+  }
+}
+
+@media all and (min-width: $breakpoint) {
+  .education__course {
+    &.active {
+      .education__info {
+        padding-top: 0;
+      }
+    }
+  }
+  .education__container {
+    .education__nav {
+      li {
+        margin-bottom: 2px;
+      }
+    }
+  }
+}
+
+// Tabs for larger screens
+@media all and (min-width: $breakpoint) {
+  .education {
+    &__results {
+      display: flex;
+      column-gap: 1.5em;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+
+    &__certificate-url {
+      // align-self: flex-end;
+    }
+  }
+
+  .education__container {
+    .education__nav {
+      display: block;
+      li {
+        display: inline-block;
+        a {
+          display: block;
+        }
+      }
+    }
+    .education__course {
+      min-height: 0;
+      &::before {
+        display: none;
+      }
+    }
+    // Tabs on the side (works only on big screens)
+    &.education__container {
+      .education__nav {
+        width: $width__tabs-side;
+        // width: fit-content;
+        float: left;
+        li {
+          display: block;
+        }
+      }
+      .education__course {
+        margin-left: $width__tabs-side;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1343px) {
+  .education__course[data-title="FreeCodeCamp.org"] .education__results {
+    flex-direction: column;
+  }
+
+  .education__course[data-title="FreeCodeCamp.org"]
+    .education__certificate-url {
+    text-align: center;
+  }
+
+  .education__course[data-title="FreeCodeCamp.org"] .education__skills {
+    flex-basis: 120px;
+  }
+}

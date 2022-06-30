@@ -1,0 +1,157 @@
+.about {
+  background-color: $white;
+
+  // margin-bottom: -10px;
+
+  // z-index: 99;
+
+  &__title {
+    @include title_format;
+
+    &--blue {
+      color: $turquoise;
+    }
+  }
+
+  &__container {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.1em;
+    position: relative;
+  }
+
+  &__text {
+    width: 40%;
+    line-height: 2em;
+  }
+
+  &__contacts {
+    margin-top: 3em;
+  }
+
+  // &__buttons {
+  //   display: flex;
+  //   justify-content: space-around;
+  // }
+
+  // &__button {
+  //   padding: 5px 8px;
+  //   font: 10px;
+  //   font-weight: 700;
+  //   letter-spacing: 2px;
+  //   text-transform: uppercase;
+  //   text-decoration: none;
+  //   text-align: center;
+  //   margin: 0 1em 0.5em 0;
+  //   color: white;
+  //   background-color: $fontain-blue;
+  //   border: 5px solid transparent;
+  //   transition: tranform 0.2s ease;
+  //   border-radius: 50px;
+  // }
+
+  &__phone,
+  &__email,
+  &__location,
+  &__profile,
+  &__linkedin,
+  &__github {
+    display: flex;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  &__icon {
+    width: 25px;
+    margin-right: 1em;
+  }
+
+  &__form {
+    background-color: white;
+    color: black;
+    font-size: 1.2em;
+    font-weight: 300;
+    width: 600px;
+    margin-left: auto;
+    box-shadow: 0 0 10px lightblue;
+    padding: 2em;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__headline {
+    font-size: 1.5em;
+    margin: 0;
+    text-align: center;
+  }
+
+  &__inputs {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    // justify-content: space-between;
+    // row-gap: 1em;
+    // column-gap: 2em;
+  }
+
+  &__label {
+    // width: 100%;
+    // // flex-grow: 1;
+    // // border-bottom: 1px solid $white;
+    // // padding-bottom: 0.7em;
+
+    textarea {
+      resize: none;
+      // border-radius: 3px;
+      height: 200px;
+      padding: 1em 1.5em;
+
+      &::placeholder {
+        font-family: "Alegreya Sans", sans-serif;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0 1.5em;
+    height: 50px;
+    border: 1px solid $turquoise;
+
+    &::placeholder {
+      font-family: "Alegreya Sans", sans-serif;
+      font-size: 1.2rem;
+    }
+
+    &:focus {
+      border: none;
+      outline: none;
+      font-family: inherit;
+      font-size: 1.2rem;
+      // color: white;
+      // font-family: inherit;
+      // font-size: inherit;
+      // font-weight: inherit;
+      box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+      border: 1px solid rgba(81, 203, 238, 1);
+    }
+  }
+
+  &__button {
+    background-color: $turquoise;
+    outline: none;
+    border: none;
+    color: $white;
+    margin: 0 auto;
+    padding: 0.5em;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1em;
+  }
+}
