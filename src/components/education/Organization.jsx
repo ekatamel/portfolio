@@ -22,9 +22,17 @@ function Organization(props) {
       <section
         // id={"side_tab" + (props.index + 1)}
         className={props.className}
-        data-title={props.title}
         onClick={props.onClick}
       >
+        <div className="education__tab">
+          <img
+            className="education__logo--small"
+            src={props.logoSmall}
+            alt=""
+          />
+          {props.title}
+        </div>
+
         <div className="education__info-container"> {coursesOrg}</div>
       </section>
     </>

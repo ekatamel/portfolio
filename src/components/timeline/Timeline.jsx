@@ -10,6 +10,7 @@ function Timeline() {
           date={e.timeline_date}
           position={e.timeline_position}
           text={e.timeline_text}
+          img={e.timeline_img}
           className="timeline__desc timeline__desc--active"
         />
       );
@@ -20,6 +21,7 @@ function Timeline() {
           date={e.timeline_date}
           position={e.timeline_position}
           text={e.timeline_text}
+          img={e.timeline_img}
           className="timeline__desc"
         />
       );
@@ -49,8 +51,8 @@ function Timeline() {
 
   return (
     <section id="timeline" className="timeline">
+      <h2 className="timeline__title title">TIMELINE</h2>
       <div className="timeline__container">
-        <h2 className="timeline__title">TIMELINE</h2>
         <ul className="timeline__list">
           <li
             className="timeline__item timeline__item--active"
@@ -62,10 +64,10 @@ function Timeline() {
             11/2019
           </li>
           <li className="timeline__item" onClick={handleDateClick}>
-            02/2021
+            03/2020
           </li>
           <li className="timeline__item" onClick={handleDateClick}>
-            01/2022
+            02/2021
           </li>
           <li className="timeline__item" onClick={handleDateClick}>
             03/2022

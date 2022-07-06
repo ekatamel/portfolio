@@ -3,29 +3,29 @@ const skills = {
     {
       name: "HTML5",
       logo: require("../img/icons/html.png"),
-      skills: ["Semantic HTML", "Forms", "Tables"],
+      skills: ["Elements & attributes", "Semantic markup","Meta tags", "Forms", "Tables", "Media"],
     },
     {
       name: "CSS",
       logo: require("../img/icons/css.png"),
       skills: [
+        "Box model",
         "Positioning",
         "Grid",
         "Flexbox",
         "Responsive design",
-        "Animations",
-        "Sass",
+        "Animations", "BEM"
       ],
     },
     {
       name: "Javascript",
       logo: require("../img/icons/js.png"),
-      skills: ["DOM manipulation", "AJAX requests", "OOP"],
+      skills: ["DOM manipulation", "Conditionals", "Arrays", "Loops", "AJAX requests", "Classes", "OOP"],
     },
     {
       name: "React",
       logo: require("../img/icons/react.png"),
-      skills: ["JSX syntax", "Props", "React Forms", "Hooks"],
+      skills: ["JSX", "Functional components", "Conditional rendering", "Props", "useState", "useEffect", "Router"],
     },
   ],
 
@@ -33,7 +33,7 @@ const skills = {
     {
       name: "PHP",
       logo: require("../img/icons/php.png"),
-      skills: ["OOP", "Forms handling", "CRUD"],
+      skills: ["Arrays", "Loops", "Inline PHP", "OOP", "Forms handling", "HTTP requests", "API endpoints", "CRUD"],
     },
     {
       name: "Laravel",
@@ -41,17 +41,20 @@ const skills = {
       skills: [
         "OOP",
         "MVC",
+        "API",
         "Migrations",
         "Eloquent ORM",
+        "Relationships",
         "Routing",
-        "Blade templates",
+        "Blade",
         "CRUD",
+        "Fortify"
       ],
     },
     {
       name: "Databases",
       logo: require("../img/icons/database.png"),
-      skills: ["Data modelling", "MySQL", "SQL queries", "PHP My Admin"],
+      skills: ["Data modelling", "MySQL", "SQL queries", "Relationships","Joins", "Indexes"],
     },
   ],
 
@@ -59,30 +62,72 @@ const skills = {
     {
       name: "Command Line",
       logo: require("../img/icons/command-line.png"),
-      skills: [],
+
     },
-    { name: "Git", logo: require("../img/icons/git.png"), skills: [1, 2] },
+    { name: "Git", logo: require("../img/icons/git.png")},
 
     {
       name: "GitHub",
       logo: require("../img/icons/github.png"),
-      skills: [1, 2],
+
     },
 
-    { name: "Gulp", logo: require("../img/icons/gulp.png"), skills: [1, 2] },
+    { name: "Gulp", logo: require("../img/icons/gulp.png")},
     {
       name: "Webpack",
       logo: require("../img/icons/webpack.png"),
-      skills: [1, 2],
     },
-    { name: "NPM", logo: require("../img/icons/npm.png"), skills: [1, 2] },
-    { name: "Babel", logo: require("../img/icons/babel.png"), skills: [1, 2] },
-    { name: "JIRA", logo: require("../img/icons/jira.png"), skills: [1, 2] },
+    { name: "NPM", logo: require("../img/icons/npm.png")},
+    { name: "Babel", logo: require("../img/icons/babel.png")},
+    { name: "JIRA", logo: require("../img/icons/jira.png")},
     {
       name: "Postman",
-      logo: require("../img/icons/postman.png"),
-      skills: [1, 2],
+      logo: require("../img/icons/postman.png")
     },
+    {
+      name: "PHP My admin",
+      logo: require("../img/icons/phpmyadmin.png")
+    },
+    {
+      name: "Figma",
+      logo: require("../img/icons/figma.png")
+    }, 
+    {
+      name: "Sass",
+      logo: require("../img/icons/sass.png")
+    },
+    {
+      name: "Composer",
+      logo: require("../img/icons/composer.png")
+    },
+    {
+      name: "XAMPP",
+      logo: require("../img/icons/xampp.png")
+    },
+    {
+      name: "Google Analytics",
+      logo: require("../img/icons/ga.png")
+    },
+    {
+      name: "Google Optimize",
+      logo: require("../img/icons/optimize.png")
+    },
+    {
+      name: "Confluence",
+      logo: require("../img/icons/confluence.png")
+    },
+    {
+      name: "Trello",
+      logo: require("../img/icons/trello.png")
+    },
+    {
+      name: "Visual Studio Code",
+      logo: require("../img/icons/visual-studio.png")
+    },
+    {
+      name: "SAFe",
+      logo: require("../img/icons/safe.png")
+    }
   ],
 };
 export default skills;

@@ -7,21 +7,21 @@ function Course(props) {
 
   return (
     <div className="education__info">
-      <h5 className="education__name">{props.name}</h5>
+      <a className="education__link" target="_blank" href={props.courseURL}>
+        <h5 className="education__name">{props.name}</h5>
+      </a>
+
       <p className="education__description">{props.desc}</p>
-      <p className="education__result"> Languages & technologies:</p>
+
       <div className="education__results">
-        <ul className="education__skills">{skills}</ul>
-        <a
-          className="education__certificate-url"
-          href={props.certificateUrl}
-          target="_blank"
-        >
-          <img
-            className="education__certificate-img"
-            src={props.certificateImg}
-          />
-        </a>
+        <ul className="education__skills">
+          <span>Topics:</span> {skills}
+        </ul>
+        <img
+          className="education__certificate-img"
+          src={props.certificateImg}
+        />
+        {/* </a> */}
       </div>
     </div>
   );

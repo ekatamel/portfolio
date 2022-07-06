@@ -1,6 +1,7 @@
 import education from "../../data/education";
 import Organization from "./Organization";
 import Tab from "./Tab";
+
 // import { useState } from "react";
 
 function Education() {
@@ -80,6 +81,7 @@ function Education() {
           index={i}
           className="active education__course"
           title={e.organization}
+          logoSmall={e.logo_small}
           onClick={showContent}
         />
       );
@@ -90,6 +92,7 @@ function Education() {
           index={i}
           className="education__course"
           title={e.organization}
+          logoSmall={e.logo_small}
           onClick={showContent}
         />
       );
@@ -98,7 +101,9 @@ function Education() {
 
   return (
     <section id="education" className="education">
-      <h4 className="education__title education__title--black">MY EDUCATION</h4>
+      <h4 className="education__title education__title--black title">
+        MY EDUCATION
+      </h4>
 
       <article className="tabbed-content tabs-side education__container">
         <nav className="tabs education__nav">

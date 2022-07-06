@@ -1,64 +1,51 @@
-/*
-SCSS variables and mixins
-*/
-// $color__main: #444;
-
 .education {
+  @include container;
+  background-image: linear-gradient(to bottom, #97cee9c8, #ffffff);
   font-size: 1.2em;
+  // height: 100vh;
+  display: flex;
+  // gap: 3em;
+  flex-direction: column;
+  // justify-content: space-between;
+  // height: fit-content;
 
   &__title {
-    @include title_format();
+    @include title_format;
+    // font-family: 'Architects Daughter', cursive;
+    // color: $prussian-blue;
+    // height: 10%;
   }
 
   &__container {
     background: #fff;
     box-shadow: 1px 1px 6px #ccc;
-    width: 80%;
-    padding: 1em;
+    width: 90%;
+    padding: 3em 2em;
     margin: 1em auto;
+    border-radius: 50px;
+    height: fit-content;
+  }
 
-    .education__nav {
-      display: none;
+  &__nav {
+    display: none;
 
-      ul {
-        margin: 0;
-        padding: 0 0 1em 0;
-        font-weight: bold;
-        li {
-          background: $background__active;
+    ul {
+      margin: 0;
+      padding: 0;
+      font-weight: bold;
+      li {
+        background: $background__active;
+        cursor: pointer;
 
-          a {
-            // height: 50px;
-            padding: 0.5em 1em;
-            &:hover,
-            &.active {
-              @include tab-active();
-            }
+        a {
+          // height: 50px;
+          padding: 0.8em 1em;
+          display: flex;
+          align-items: center;
+          &:hover,
+          &.active {
+            @include tab-active();
           }
-        }
-      }
-    }
-    .education__course {
-      min-height: 2em; // We need a minimum height for each item or else the accordion buttons would dissapear
-      &::before {
-        content: attr(
-          data-title
-        ); // Instead of polluting the HTML with a duplicate set of tabs, we get the accordion using the data-title attribute.
-      }
-      // &::before {
-      //   content: url(data-image);
-      // }
-      .education__info {
-        // We hide the inactive content with zero opacity instead of "display:none" because this allows us to apply transition effects if we want.
-        opacity: 0;
-        visibility: hidden;
-        height: 0;
-      }
-      &.active {
-        .education__info {
-          opacity: 1;
-          visibility: visible;
-          height: auto;
         }
       }
     }
@@ -66,21 +53,34 @@ SCSS variables and mixins
 
   &__course {
     margin-bottom: 2px;
-    &::before {
-      cursor: pointer;
-      font-weight: bold;
-      background: $background__active;
-      padding: 0.5em;
-      display: block;
-      text-align: center;
+    min-height: 2em;
+
+    &:nth-of-type(2) {
+      .education__results {
+        @media (max-width: 1405px) {
+          flex-direction: column;
+        }
+      }
+
+      .education__certificate-img {
+        @media (max-width: 1405px) {
+          margin: auto;
+        }
+      }
     }
+
     &.active {
-      &::before {
+      .education__tab {
         @include tab-active();
         color: black;
+        cursor: pointer;
       }
+
       .education__info {
-        padding: 1em;
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        // padding: 2em;
         -webkit-transition: opacity 0.3s ease-in-out;
         -moz-transition: opacity 0.3s ease-in-out;
         -o-transition: opacity 0.3s ease-in-out;
@@ -90,135 +90,107 @@ SCSS variables and mixins
     }
   }
 
+  &__tab {
+    cursor: pointer;
+    font-weight: bold;
+    background: $background__active;
+    padding: 0.5em;
+    display: block;
+    text-align: center;
+  }
+
   &__logo {
-    // width: 150px;
-    height: 20px;
-
-    // &:first-child {
-    //   height: 40px;
-    // }
-
-    // &:first-of-type {
-    //   height: 40px;
-    // }
-
     &:nth-child(1) {
       height: 20px;
+    }
+
+    &--small {
+      height: 20px;
+      margin-right: 10px;
     }
   }
 
   &__info-container {
     display: flex;
+    // gap: 1em;
     justify-content: center;
     align-items: stretch;
   }
 
   &__info {
+    flex-basis: 45%;
+    flex-grow: 1;
     display: flex;
+    gap: 1em;
     flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
   }
 
   &__name {
-    font-size: 1.7rem;
+    font-size: calc(1rem + 1vw);
     margin: 0;
     text-align: center;
-    flex-basis: 85px;
+    color: #365673;
+    // flex-basis: 85px;
+  }
+
+  &__results {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1.5em;
+    // justify-self: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    // align-items: stretch;
+
+    // &:nth-last-child(2) {
+    //   color: red;
+    // }
+    // &:nth-last-of-type(2) {
+    //   display: none;
+    // }
   }
 
   &__result {
-    flex-basis: 35px;
+    // flex-basis: 35px;
+    margin: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: black;
+  }
+
+  &__skills {
+    margin: 0;
+    padding: 0 0 0 20px;
+    // font-size: calc(0.4rem + 1vw);
+
+    span {
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
   }
 
   &__description {
+    text-align: justify;
     margin-top: 0;
-    flex-basis: 70px;
+    // font-size: calc(0.4rem + 1vw);
+    // flex-basis: 70px;
   }
+
+  // &__certificate-url {
+  //   width: 100%;
+  //   display: flex;
+  //   justify-content: flex-end;
+  // }
 
   &__certificate-img {
-    width: 200px;
-  }
-
-  &__result {
-    margin: 0;
-  }
-}
-
-@media all and (min-width: $breakpoint) {
-  .education__course {
-    &.active {
-      .education__info {
-        padding-top: 0;
-      }
-    }
-  }
-  .education__container {
-    .education__nav {
-      li {
-        margin-bottom: 2px;
-      }
-    }
-  }
-}
-
-// Tabs for larger screens
-@media all and (min-width: $breakpoint) {
-  .education {
-    &__results {
-      display: flex;
-      column-gap: 1.5em;
-      justify-content: space-between;
-      align-items: stretch;
-    }
-
-    &__certificate-url {
-      // align-self: flex-end;
-    }
-  }
-
-  .education__container {
-    .education__nav {
-      display: block;
-      li {
-        display: inline-block;
-        a {
-          display: block;
-        }
-      }
-    }
-    .education__course {
-      min-height: 0;
-      &::before {
-        display: none;
-      }
-    }
-    // Tabs on the side (works only on big screens)
-    &.education__container {
-      .education__nav {
-        width: $width__tabs-side;
-        // width: fit-content;
-        float: left;
-        li {
-          display: block;
-        }
-      }
-      .education__course {
-        margin-left: $width__tabs-side;
-      }
-    }
-  }
-}
-
-@media all and (max-width: 1343px) {
-  .education__course[data-title="FreeCodeCamp.org"] .education__results {
-    flex-direction: column;
-  }
-
-  .education__course[data-title="FreeCodeCamp.org"]
-    .education__certificate-url {
-    text-align: center;
-  }
-
-  .education__course[data-title="FreeCodeCamp.org"] .education__skills {
-    flex-basis: 120px;
+    max-width: 35%;
+    // max-width: 300px;
+    min-width: 200px;
   }
 }

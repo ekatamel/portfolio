@@ -1,16 +1,46 @@
+import { useEffect, useState } from "react";
+
 function Navbar() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setWidth(window.innerWidth);
+    });
+  }, []);
+
   return (
     <header className="navigation">
-      <nav className="navigation__top">
-        <a href="" className="navigation__link">
-          <img className="navigation__logo" src="" alt="" />
-          Image
-        </a>
+      <a
+        onClick={() => {
+          setIsNavOpen(!isNavOpen);
+        }}
+        className="navigation__link icon"
+        href="#"
+      >
+        <i class="fa-solid fa-bars"></i>
 
-        <ul className="navigation__links">
+        <i class="fa-thin fa-abacus"></i>
+      </a>
+      <nav className="navigation__top">
+        <ul
+          className={
+            isNavOpen
+              ? width >= 769
+                ? "navigation__links"
+                : "navigation__links expanded"
+              : "navigation__links"
+          }
+        >
           <li className="navigation__item">
             <a className="navigation__link" href="#timeline">
               TIMELINE
+            </a>
+          </li>
+          <li className="navigation__item">
+            <a className="navigation__link" href="#education">
+              EDUCATION
             </a>
           </li>
           <li className="navigation__item">
@@ -21,11 +51,6 @@ function Navbar() {
           <li className="navigation__item">
             <a className="navigation__link" href="#portfolio">
               PORTFOLIO
-            </a>
-          </li>
-          <li className="navigation__item">
-            <a className="navigation__link" href="#about">
-              ABOUT ME
             </a>
           </li>
           <li className="navigation__item">

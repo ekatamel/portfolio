@@ -10,7 +10,10 @@ function Project(props) {
   // };
 
   return (
-    <div className="portfolio__project">
+    <div
+      className="portfolio__project"
+      style={{ backgroundImage: `url(${props.img})` }}
+    >
       <a className="portfolio__link" href="www.com"></a>
       <div className="portfolio__info">
         <p className="portfolio__name">{props.title}</p>

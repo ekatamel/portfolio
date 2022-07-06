@@ -4,6 +4,7 @@ $white: #ffffff;
 $light_grey: #ebeaea;
 $text_grey: #444444;
 $dark_grey: #232323;
+
 $lightblue: #97cee9;
 $turquoise: #63a5bf;
 $fontain-blue: #4b83a6;
@@ -13,7 +14,7 @@ $color__main: #afe4ff;
 $color__active: grey;
 $background__active: #eee;
 $width__tabs-side: 250px;
-$breakpoint: 1072px;
+$breakpoint: 1342px;
 
 @mixin tab-active() {
   background: $color__main;
@@ -37,9 +38,14 @@ $breakpoint: 1072px;
 }
 
 @mixin title_format {
-  font-size: 3.5em;
+  // font-size: 3.8rem;
+  font-family: "Architects Daughter", cursive;
   text-align: center;
-  margin: 0;
-  padding-top: 1.5em;
-  padding-bottom: 1em;
+  margin: 0 0 1em 0;
+  // padding: 1em 0 1em 0
+}
+
+@mixin container {
+  height: fit-content;
+  padding: 2.5em 0;
 }

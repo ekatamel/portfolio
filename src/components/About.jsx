@@ -7,53 +7,55 @@ import github from "../img/icons/github.png";
 
 function About() {
   return (
-    <section id="about" className="about">
-      <h4 className="about__title about__title--blue">GET IN TOUCH</h4>
+    <section className="about" id="contact">
+      <h4 className="title about__title about__title--blue">GET IN TOUCH</h4>
       <div className="about__container">
-        <p className="about__text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Exercitationem quae fugit tenetur. Modi officiis perspiciatis sint
-          officia voluptatibus. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit.
-        </p>
-        <div className="about__contacts">
-          <p className="about__phone">
-            <img className="about__icon" src={phone} alt="" />
-            +420 775 992 148
+        <div className="about__info">
+          <p className="about__text">
+            For any questions, suggestions or job opportunities, feel free to
+            contact me via email or contact form to the right. I am looking
+            forward to collaborating with you!
           </p>
-          <p className="about__email">
-            <img className="about__icon" src={email} alt="" />
-            katerinka.melnichuk@gmail.com
-          </p>
-          <p className="about__location">
-            <img className="about__icon" src={location} alt="" />
-            Prague
-          </p>
-          <p className="about__profile">
-            <img className="about__icon" src={profile} alt="" />
-            <a className="about__resume" href="">
-              download CV
-            </a>
-          </p>
-          <p className="about__linkedin">
-            <img className="about__icon" src={linkedin} alt="" />
-            <a
-              className="about__linkedinurl"
-              href="https://www.linkedin.com/in/ekaterinamelnichuk/"
-            >
-              linkedin.com/in/ekaterinamelnichuk/
-            </a>
-          </p>
-          <p className="about__github">
-            <img className="about__icon" src={github} alt="" />
-            <a className="about__githuburl" href="https://github.com/ekatamel">
-              github.com/ekatamel
-            </a>
-          </p>
+          <div className="about__contacts">
+            <p className="about__phone">
+              <img className="about__icon" src={phone} alt="" />
+              +420 775 992 148
+            </p>
+            <p className="about__email">
+              <img className="about__icon" src={email} alt="" />
+              <a href="mailto: eka.melnichuk@gmail.com">
+                eka.melnichuk@gmail.com
+              </a>
+            </p>
+            <p className="about__profile">
+              <img className="about__icon" src={profile} alt="" />
+              <a className="about__resume" href="">
+                download CV
+              </a>
+            </p>
+            <p className="about__linkedin">
+              <img className="about__icon" src={linkedin} alt="" />
+              <a
+                className="about__linkedinurl"
+                href="https://www.linkedin.com/in/ekaterinamelnichuk/"
+              >
+                linkedin.com/in/ekaterinamelnichuk/
+              </a>
+            </p>
+            <p className="about__github">
+              <img className="about__icon" src={github} alt="" />
+              <a
+                className="about__githuburl"
+                href="https://github.com/ekatamel"
+              >
+                github.com/ekatamel
+              </a>
+            </p>
+          </div>
         </div>
 
         <div className="about__form">
-          <h5 className="about__headline">Contact me</h5>
+          <h5 className="about__headline">SEND ME A MESSAGE</h5>
           <form className="about__inputs">
             <label className="about__label" htmlFor="name">
               <input

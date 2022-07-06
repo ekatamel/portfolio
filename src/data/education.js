@@ -2,14 +2,14 @@ const education = [
   {
     organization: "Data4you",
     logo: require("../img/education/data4you.png"),
-    logo_small: "../img/education/data4you-small.png",
+    logo_small: require("../img/education/data4you-small.png"),
     courses: [
       {
         course_name: "Coding Bootcamp Praha 2022",
 
         description:
-          "12-week intensive full-time fullstack bootcamp focused on acquiring front-end & back-end skills of web developer.",
-        skills: ["HTML", "CSS", "JavaScript", "React", "PHP", "Git", "Laravel"],
+          "12-week full-time bootcamp focused on acquiring front-end & back-end skills of a web developer. Bootcamp covers essential web concepts, technologies, languages, frameworks, tools and libraries to build solid developer toolkit. During the bootcamp we practiced materials by doing numerous exericeses, created 6 team projects and participated in 4 hackathons. For the last 2 weeks of the program we designed, developed and deployed our final team project for a real client.",
+        skills: ["HTML5", "CSS3", "Sass", "JavaScript", "React", "PHP", "Laravel", "Git", "Compilers"],
 
         date: "02.05.2022 - 22.07.2022",
         course_url: "https://codingbootcamp.cz/",
@@ -22,13 +22,13 @@ const education = [
   {
     organization: "FreeCodeCamp.org",
     logo: require("../img/education/fcc.png"),
-    logo_small: "../img/education/fcc-small.png",
+    logo_small: require("../img/education/fcc-small.png"),
     courses: [
       {
         course_name: "Responsive Web Design",
         description:
-          "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages:.",
-        skills: ["HTML", "CSS", "Flexbox", "Grid", "Responsive design"],
+          "Course designed to learn semantic & accessible HTML concepts, CSS styling, positioning, animations, layouts as well principles of responsive design. As a results of the course, I built 5 projects applying new skills and knowledge and gained certificate.",
+        skills: ["Semantic HTML tags", "CSS selectors", "Flexbox", "Grid", "CSS animations", "Media queries"],
         date: "April, 2022",
         course_url:
           "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
@@ -37,11 +37,11 @@ const education = [
           "https://www.freecodecamp.org/certification/fccb1833e0c-d1a9-4942-966b-7a7123ad8ee1/responsive-web-design",
       },
       {
-        course_name: "JavaScript Algorithms and Data Structures",
+        course_name: "JS Algorithms & Data",
         description:
-          "While HTML and CSS control the content and styling of a page, JavaScript is used to make it interactive.",
-        skills: ["Javascript", "ES6", "Regular expressions", "OOP"],
-        date: "XY",
+          "Javascript course with focus on learning syntax, working with different data types and data structures, building classes and objects as well using principles of functional programming. Course was finished by 5 JS projects and  certificatiton.",
+        skills: ["Variables, data types", "ES5 & ES6" ,"Arrays and objects", "Loops & conditions", "OOP", "Regular expressions"],
+        date: "July 2022",
         course_url:
           "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
         certificate_img: require("../img/education/cbp_certificate.png"),
@@ -53,15 +53,15 @@ const education = [
   {
     organization: "Scrimba",
     logo: require("../img/education/scrimba.png"),
-    logo_small: "../img/education/scrimba-small.png",
+    logo_small: require("../img/education/scrimba-small.png"),
     courses: [
       {
-        course_name: "Learn React for free",
+        course_name: "Learn React",
         logo: "",
         description:
-          "The ultimate React 101 - the perfect starting point for any React beginner. Learn the basics of modern React by solving 140+ interactive coding challenges and building eight fun projects.",
-        skills: ["React", "Props", "API calls"],
-        date: "XY",
+          "Interactive course designed to learn React concepts and be able to create and use functional components, properties, hooks, controlled inputs & forms, making API calls and more. Through the course I build 8 React applications to practice new knowledge.",
+        skills: ["JSX", "Functional components", "Props", "useState, useEffect", "Conditional rendering", "Data fetching", "Client-side routing"],
+        date: "July 2022",
         course_url: "https://scrimba.com/learn/learnreact",
         certificate_img: require("../img/education/cbp_certificate.png"),
         certificate_url:

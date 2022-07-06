@@ -1,31 +1,45 @@
 // INTRODUCTION
 
 .introduction {
-  height: 60vh;
+  height: fit-content;
+  padding: 7em 0;
+
   color: $prussian-blue;
 
   font-weight: 300;
 
   &__container {
-    width: 70%;
+    width: 80%;
+    height: 100%;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3em;
+  }
+
+  &__info {
+    text-align: justify;
   }
 
   &__title {
     @include title_format;
-    // padding-top: 2.2em;
-    // padding-bottom: 1em;
-    // margin: 0;
-    // font-size: 2.5em;
-    // text-align: center;
+    margin-bottom: 0.7em;
   }
 
   &__text {
-    font-size: 1.8em;
+    // font-size: 1.8em;
+
+    line-height: 1.5em;
+
+    &--bold {
+      font-weight: 600;
+      color: $steel-blue;
+    }
   }
 
-  &__text--bold {
-    font-weight: 600;
-    color: $steel-blue;
+  &__img {
+    width: 100%;
+    min-width: 300px;
   }
 }
